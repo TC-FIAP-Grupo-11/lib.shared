@@ -1,4 +1,4 @@
-namespace Lib.Shared.Domain.Entities;
+namespace FCG.Lib.Shared.Domain.Entities;
 
 public abstract class BaseEntity
 {

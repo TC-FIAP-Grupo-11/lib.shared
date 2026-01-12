@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Lib.Shared.Infrastructure.DependencyInjection;
+namespace FCG.Lib.Shared.Infrastructure.DependencyInjection;
 
 public static class DatabaseExtensions
 {

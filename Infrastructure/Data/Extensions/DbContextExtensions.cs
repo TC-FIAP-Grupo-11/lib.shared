@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using Lib.Shared.Domain.Entities;
+using FCG.Lib.Shared.Domain.Entities;
 
-namespace Lib.Shared.Infrastructure.Data.Extensions;
+namespace FCG.Lib.Shared.Infrastructure.Data.Extensions;
 
 public static class DbContextExtensions
 {

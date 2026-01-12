@@ -1,4 +1,4 @@
-namespace Lib.Shared.Domain.Enumerations;
+namespace FCG.Lib.Shared.Domain.Enumerations;
 
 public sealed class Role
 {

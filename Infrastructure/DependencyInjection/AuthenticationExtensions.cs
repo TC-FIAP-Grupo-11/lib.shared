@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Lib.Shared.Infrastructure.DependencyInjection;
+namespace FCG.Lib.Shared.Infrastructure.DependencyInjection;
 
 public static class AuthenticationExtensions
 {

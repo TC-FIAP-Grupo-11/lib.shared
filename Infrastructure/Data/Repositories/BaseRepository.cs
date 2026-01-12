@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using Lib.Shared.Domain.Entities;
-using Lib.Shared.Application.Contracts.Repositories;
+using FCG.Lib.Shared.Domain.Entities;
+using FCG.Lib.Shared.Application.Contracts.Repositories;
 using System.Linq.Expressions;
 
-namespace Lib.Shared.Infrastructure.Data.Repositories;
+namespace FCG.Lib.Shared.Infrastructure.Data.Repositories;
 
 public class BaseRepository<T, TContext> : IBaseRepository<T> 
     where T : BaseEntity 

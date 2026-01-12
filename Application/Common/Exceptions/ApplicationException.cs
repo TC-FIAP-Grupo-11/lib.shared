@@ -1,4 +1,4 @@
-namespace Lib.Shared.Application.Common.Exceptions;
+namespace FCG.Lib.Shared.Application.Common.Exceptions;
 
 public abstract class ApplicationException : Exception
 {

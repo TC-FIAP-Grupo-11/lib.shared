@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Lib.Shared.Application.Common.Models;
+using FCG.Lib.Shared.Application.Common.Models;
 
-namespace Lib.Shared.Application.Extensions;
+namespace FCG.Lib.Shared.Application.Extensions;
 
 public static class ResultExtensions
 {

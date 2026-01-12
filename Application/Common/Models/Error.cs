@@ -1,4 +1,4 @@
-namespace Lib.Shared.Application.Common.Models;
+namespace FCG.Lib.Shared.Application.Common.Models;
 
 public sealed class Error : IEquatable<Error>
 {

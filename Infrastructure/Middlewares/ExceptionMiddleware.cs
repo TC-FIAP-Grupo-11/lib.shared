@@ -2,9 +2,9 @@ using System.Net;
 using System.Text.Json;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Lib.Shared.Application.Common.Exceptions;
+using FCG.Lib.Shared.Application.Common.Exceptions;
 
-namespace Lib.Shared.Infrastructure.Middlewares;
+namespace FCG.Lib.Shared.Infrastructure.Middlewares;
 
 public class ExceptionMiddleware
 {
@@ -39,7 +39,7 @@ public class ExceptionMiddleware
         switch (exception)
         {
             // Domain Exceptions
-            case Lib.Shared.Application.Common.Exceptions.ApplicationException applicationException:
+            case FCG.Lib.Shared.Application.Common.Exceptions.ApplicationException applicationException:
                 statusCode = HttpStatusCode.BadRequest;
                 message = "Domain validation error";
                 errors.Add(applicationException.Message);

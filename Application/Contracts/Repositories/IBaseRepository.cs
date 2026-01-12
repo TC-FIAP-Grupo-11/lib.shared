@@ -1,7 +1,7 @@
-using Lib.Shared.Domain.Entities;
+using FCG.Lib.Shared.Domain.Entities;
 using System.Linq.Expressions;
 
-namespace Lib.Shared.Application.Contracts.Repositories;
+namespace FCG.Lib.Shared.Application.Contracts.Repositories;
 
 public interface IBaseRepository<T> where T : BaseEntity
 {

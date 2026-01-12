@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Lib.Shared.Infrastructure.DependencyInjection;
+namespace FCG.Lib.Shared.Infrastructure.DependencyInjection;
 
 public static class CorsExtensions
 {

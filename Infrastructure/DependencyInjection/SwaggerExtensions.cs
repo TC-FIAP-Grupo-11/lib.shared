@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
-namespace Lib.Shared.Infrastructure.DependencyInjection;
+namespace FCG.Lib.Shared.Infrastructure.DependencyInjection;
 
 public static class SwaggerExtensions
 {

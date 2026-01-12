@@ -4,6 +4,17 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    
+    <!-- Metadados do pacote NuGet -->
+    <PackageId>FCG.FCG.Lib.Shared</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>TC-FIAP-Grupo-11</Authors>
+    <Company>TC-FIAP-Grupo-11</Company>
+    <Description>Biblioteca compartilhada com componentes comuns para aplicações FCG</Description>
+    <PackageTags>shared;library;dotnet;common;fcg</PackageTags>
+    <RepositoryUrl>https://github.com/TC-FIAP-Grupo-11/FCG.Lib.Shared</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
