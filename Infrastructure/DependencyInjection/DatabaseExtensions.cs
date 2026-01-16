@@ -36,35 +36,4 @@ public static class DatabaseExtensions
 
         return services;
     }
-
-    public static IServiceCollection AddPostgresDatabase<TContext>(
-        this IServiceCollection services,
-        IConfiguration configuration,
-        string connectionStringName = "DefaultConnection",
-        int maxRetryCount = 5,
-        int maxRetryDelaySeconds = 10,
-        int commandTimeoutSeconds = 30) where TContext : DbContext
-    {
-        var connectionString = configuration.GetConnectionString(connectionStringName);
-
-        services.AddDbContext<TContext>(options =>
-        {
-            options.UseNpgsql(connectionString, npgsqlOptions =>
-            {
-                npgsqlOptions.EnableRetryOnFailure(
-                    maxRetryCount: maxRetryCount,
-                    maxRetryDelay: TimeSpan.FromSeconds(maxRetryDelaySeconds),
-                    errorCodesToAdd: null);
-
-                npgsqlOptions.CommandTimeout(commandTimeoutSeconds);
-            });
-
-            #if DEBUG
-            options.EnableSensitiveDataLogging();
-            options.EnableDetailedErrors();
-            #endif
-        });
-
-        return services;
-    }
 }

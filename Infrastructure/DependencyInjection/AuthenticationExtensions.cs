@@ -11,13 +11,8 @@ public static class AuthenticationExtensions
     public static IServiceCollection AddJwtAuthentication(
         this IServiceCollection services,
         IConfiguration configuration,
-        string sectionName = "AWS")
+        string sectionName = "Authentication:JwtBearer")
     {
-        var region = configuration[$"{sectionName}:Region"];
-        var userPoolId = configuration[$"{sectionName}:Cognito:UserPoolId"];
-        var clientId = configuration[$"{sectionName}:Cognito:ClientId"];
-        var authority = $"https://cognito-idp.{region}.amazonaws.com/{userPoolId}";
-
         services.AddAuthentication(options =>
         {
             options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -25,18 +20,25 @@ public static class AuthenticationExtensions
         })
         .AddJwtBearer(options =>
         {
-            options.Authority = authority;
+            configuration.GetSection(sectionName).Bind(options);
+            
+            // Validação do Authority
+            if (string.IsNullOrEmpty(options.Authority))
+            {
+                throw new ArgumentException($"JWT Authority is required. Configure '{sectionName}:Authority' in appsettings.json");
+            }
+
+            // Configurações padrão que não vêm do appsettings
             options.TokenValidationParameters = new TokenValidationParameters
             {
                 ValidateIssuerSigningKey = true,
                 ValidateIssuer = true,
-                ValidIssuer = authority,
+                ValidIssuer = options.Authority,
                 ValidateLifetime = true,
                 ValidateAudience = false,
                 ClockSkew = TimeSpan.Zero
             };
-            options.MetadataAddress = $"{authority}/.well-known/openid-configuration";
-            options.RequireHttpsMetadata = true;
+            options.MetadataAddress = $"{options.Authority}/.well-known/openid-configuration";
             options.SaveToken = true;
             options.RefreshOnIssuerKeyNotFound = true;
             options.BackchannelTimeout = TimeSpan.FromSeconds(30);
