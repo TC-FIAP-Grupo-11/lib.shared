@@ -7,7 +7,7 @@
     
     <!-- Metadados do pacote NuGet -->
     <PackageId>FCG.Lib.Shared</PackageId>
-    <Version>1.0.6</Version>
+    <Version>1.0.7</Version>
     <Authors>TC-FIAP-Grupo-11</Authors>
     <Company>TC-FIAP-Grupo-11</Company>
     <Description>Biblioteca compartilhada com componentes comuns para aplicações FCG</Description>
@@ -27,6 +27,10 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    
+    <!-- Messaging -->
+    <PackageReference Include="MassTransit" Version="8.1.3" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.1.3" />
   </ItemGroup>
 
 </Project>
