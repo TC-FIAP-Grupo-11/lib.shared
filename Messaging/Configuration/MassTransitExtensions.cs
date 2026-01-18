@@ -77,7 +77,8 @@ public static class MassTransitExtensions
     public static IServiceCollection AddMessagingConsumers(
         this IServiceCollection services,
         IConfiguration configuration,
-        Action<IRegistrationConfigurator> configureConsumers)
+        Action<IRegistrationConfigurator> configureConsumers,
+        string serviceName)
     {
         services.AddMassTransit(x =>
         {
@@ -101,7 +102,8 @@ public static class MassTransitExtensions
                     TimeSpan.FromSeconds(10)
                 ));
 
-                cfg.ConfigureEndpoints(context);
+                // Criar endpoint com prefixo do serviço
+                cfg.ConfigureEndpoints(context, new DefaultEndpointNameFormatter(serviceName, false));
             });
         });
 
