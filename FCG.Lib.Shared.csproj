@@ -7,7 +7,7 @@
     
     <!-- Metadados do pacote NuGet -->
     <PackageId>FCG.Lib.Shared</PackageId>
-    <Version>1.0.7</Version>
+    <Version>1.0.8</Version>
     <Authors>TC-FIAP-Grupo-11</Authors>
     <Company>TC-FIAP-Grupo-11</Company>
     <Description>Biblioteca compartilhada com componentes comuns para aplicações FCG</Description>
