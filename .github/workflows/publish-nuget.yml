@@ -8,9 +8,6 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
     
     steps:
     - uses: actions/checkout@v3
@@ -26,7 +23,5 @@ jobs:
     - name: Pack
       run: dotnet pack FCG.Lib.Shared.csproj -c Release --no-build -o .
     
-    - name: Publish to GitHub Packages
-      run: dotnet nuget push *.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/TC-FIAP-Grupo-11/index.json" --skip-duplicate
-      env:
-        NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Publish to NuGet.org
+      run: dotnet nuget push *.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
