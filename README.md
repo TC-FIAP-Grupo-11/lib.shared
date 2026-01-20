@@ -35,7 +35,7 @@ Esta biblioteca contém código comum reutilizado por todas as APIs, eliminando 
 Esta biblioteca é publicada no **GitHub Packages** e referenciada nos `.csproj` de cada API:
 
 ```xml
-<PackageReference Include="FCG.Lib.Shared" Version="1.0.8" />
+<PackageReference Include="FCG.Lib.Shared" Version="1.0.9" />
 ```
 
 **Grupo 11 - FIAP 2026**
