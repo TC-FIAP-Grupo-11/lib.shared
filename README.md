@@ -37,5 +37,3 @@ Esta biblioteca é publicada no **GitHub Packages** e referenciada nos `.csproj`
 ```xml
 <PackageReference Include="FCG.Lib.Shared" Version="1.0.9" />
 ```
-
-**Grupo 11 - FIAP 2026**
